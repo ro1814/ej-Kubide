@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "127.0.0.1",
+    "port": 3303,
+    "username": "root",
+    "password": "",
+    "database": "notes-nestjs",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true
+}
