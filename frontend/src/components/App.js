@@ -6,6 +6,7 @@ import Header from './Header';
 import NoteShow from './notes/NoteShow';
 import NoteCreate from './notes/NoteCreate';
 import NoteEdit from './notes/NoteEdit';
+import FavScreen from './notes/FavScreen'
 
 const App = () => {
     return (
@@ -18,7 +19,7 @@ const App = () => {
                         <Route path="/note/new" exact component={NoteCreate} />
                         <Route path="/note/edit/:id" exact component={NoteEdit} />
                         <Route path="/note/:id" component={NoteShow} />
-                        {/* <Route path="/fav/:id?" component={FavScreen} /> */}
+                        <Route path="/fav" component={FavScreen} />
                     </Switch>
                 </main>
             </div>

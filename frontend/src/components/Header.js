@@ -16,6 +16,9 @@ const Header = (props) => {
             <li className="nav-item">
               <Link to="/note/new" className="nav-link">Create new note</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/fav" className="nav-link">Favorites</Link>
+            </li>
           </ul>
         </div>
       </nav>

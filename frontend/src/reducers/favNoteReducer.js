@@ -1,28 +1,31 @@
-import { ADD_FAV_NOTE, REMOVE_FAV_NOTE } from '../actions/types'
+import { ADD_FAV_NOTE, REMOVE_FAV_NOTE } from "../actions/types";
 
-export const favReducer = (state = {favNotes: [] }, action) => {
-    switch( action.type ) {
-        case ADD_FAV_NOTE:
-            const note = action.payload
+export const favReducer = (state = { favItems: [] }, action) => {
+  switch (action.type) {
+    case ADD_FAV_NOTE:
+      const item = action.payload;
 
-            const existNote = state.favNotes.find((x) => x.note === item.note)
+      const existItem = state.favItems.find((x) => x.recipe === item.note);
 
-            if (existNote) {
-                return {
-                    ...state, favNotes: state.favNotes.map((x) => x.note === existNote.note ? item : x)
-                }
-            } else {
-                return {
-                    ...state,
-                    favNotes: [...state.favNotes, item]
-                }
-            }
-            case REMOVE_FAV_NOTE:
-                return{
-                    ...state,
-                    favNotes: state.favNotes.filter((x) => x.note !== action.payload)
-                }
-        default:
-            return state
-    }
-} 
+      if (existItem) {
+        return {
+          ...state,
+          favItems: state.favItems.map((x) =>
+            x.note === existItem.note ? item : x
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          favItems: [...state.favItems, item],
+        };
+      }
+    case REMOVE_FAV_NOTE:
+      return {
+        ...state,
+        favItems: state.favItems.filter((x) => x.note !== action.payload),
+      };
+    default:
+      return state;
+  }
+};

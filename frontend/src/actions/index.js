@@ -51,7 +51,7 @@ export const addToFav = ( id ) => async ( dispatch, getState ) => {
         }
     })
 
-    localStorage.setItem('favNotes', JSON.stringify(getState().fav.favNotes))
+    localStorage.setItem('favItems', JSON.stringify(getState().fav.favItems))
 }
 
 export const removeFromFav = (id) => (dispatch, getState) => {
@@ -59,5 +59,5 @@ export const removeFromFav = (id) => (dispatch, getState) => {
         type: REMOVE_FAV_NOTE,
         payload: id
     })
-    localStorage.setItem('favNotes', JSON.stringify(getState().fav.favNotes))
+    localStorage.setItem('favItems', JSON.stringify(getState().fav.favItems))
 }
